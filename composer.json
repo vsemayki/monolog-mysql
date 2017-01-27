@@ -15,8 +15,7 @@
         }
     ],
     "require": {
-        "monolog/monolog": "^1.4.1",
-        "vsemayki/monolog-mysql": "^2.0"
+        "monolog/monolog": "^1.22.0"
     },
     "autoload": {
         "psr-4": {"MySQLHandler\\": "src/MySQLHandler"}
