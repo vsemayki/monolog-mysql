@@ -29,14 +29,15 @@ Given that `$pdo` is your database instance, you could use the class as follows:
 <?php
 use MySQLHandler\MySQLHandler;
 
-$mySQLHandler = new MySQLHandler($pdo, 'monolog');
+$mySQLHandler = new MySQLHandler($pdo, 'monolog', $level = \Monolog\Logger::INFO, $bubble = true);
 
-//Create logger
+// Create logger
 $logger = new \Monolog\Logger('db_logger');
 $logger->pushHandler($mySQLHandler);
 
-//Now you can use the logger, and further attach additional information
-$logger->addInfo('User has been created, woohoo!', ['action' => 'user/create']);
+// Now you can use the logger, and further attach additional information
+// user_id is required!
+$logger->addInfo('User has been created, woohoo!', ['action' => 'user/create', 'user_id' => 3562]);
 ```
 
 # License
